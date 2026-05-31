@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Result</title>
+  <style>
+    body { font-family: Arial; text-align: center; padding: 40px; }
+    img { max-width: 400px; border: 2px solid #555; margin-top: 20px; }
+    .metrics { margin-top: 20px; font-size: 18px; }
+    .btn { margin-top: 20px; padding: 10px 20px; background: #1abc9c; color: white; border: none; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h2>🔍 Steganography Result</h2>
+  <div class="metrics">
+    <p><strong>PSNR:</strong> {{ psnr }}</p>
+    <p><strong>SSIM:</strong> {{ ssim }}</p>
+  </div>
+  <img src="{{ url_for('static', filename=download_link) }}" alt="Stego Image" />
+  <br/>
+  <a href="{{ url_for('static', filename=download_link) }}" download>
+    <button class="btn">⬇️ Download Stego Image</button>
+  </a>
+  <br/><br/>
+  <a href="/"><button class="btn">⬅️ Go Back</button></a>
+</body>
+</html>
+
+
